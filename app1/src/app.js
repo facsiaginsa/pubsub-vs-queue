@@ -16,10 +16,4 @@ app.post("/notification", async (req,res) => {
     console.log(req.body.message)
 })
 
-app.listen({port: PORT, host: IPBIND}, (err) => {
-    if (err) {
-        app.log.error(err)
-    }
-
-    app.log.info("server listen on port" + PORT)
-})
+app.listen({port: PORT, host: IPBIND})
