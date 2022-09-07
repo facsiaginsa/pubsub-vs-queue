@@ -1,14 +1,22 @@
 const app = require("fastify")()
 const cron = require('node-cron');
-const { PORT, IPBIND } = require("./configs");
+const { MODE, PORT, IPBIND } = require("./configs");
 const redisMsgQueue = require("./models/redisMsgQueue");
+const redisPubSub = require("./models/redisPubSub");
 
 let counter = 1;
 
 cron.schedule("* * * * * *", async () => {
     const message = "I want a pizza "
 
-    await redisMsgQueue(message + counter)
+    if (MODE == "queue") {
+        await redisMsgQueue(message + counter)
+    }
+
+    if (MODE == "pubsub") {
+        await redisPubSub(message + counter)
+    }
+
     counter++
 })
 

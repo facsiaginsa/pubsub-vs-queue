@@ -1,12 +1,6 @@
-const Redis = require("ioredis")
-const { REDIS_PORT, REDIS_HOST, REDIS_PASS } = require("../configs")
-const publisher = new Redis({
-    port: REDIS_PORT,
-    host: REDIS_HOST,
-    password: REDIS_PASS
-})
+const publisher = require("../loaders/redis")
 
 module.exports = async (message) => {
-    console.log("sending message to redis queue..")
+    console.log("sending message: " + message + " to redis pubsub..")
     await publisher.publish("orderpubsub", message)
 }
