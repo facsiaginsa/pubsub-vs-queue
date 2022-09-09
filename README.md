@@ -117,6 +117,8 @@ app2 handle: pizza 24
 ...
 ````
 
+You can see both ``app2`` and ``app3`` receive the message from ``redis``.
+
 When you are using queue mode, the log will be something like this
 ````
 sending message: I want a pizza 12 to redis queue..
@@ -129,3 +131,5 @@ sending message: I want a pizza 15 to redis queue..
 app2 handle: pizza 15
 ...
 ````
+
+You can see ``app2`` and ``app3`` receiving the message from ``redis`` one by one in turn.
