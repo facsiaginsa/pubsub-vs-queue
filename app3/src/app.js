@@ -10,7 +10,7 @@ if (MODE == "queue") {
         .then((message) => {
             console.log(message[1])
 
-            sendMessage("Pizza Shop 3 handle: " + message[1].replace("I want a ", ""))
+            sendMessage("app3 handle: " + message[1].replace("I want a ", ""))
             
             redisLoop()
         })

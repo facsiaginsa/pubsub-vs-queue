@@ -6,7 +6,7 @@ module.exports = async () => {
 
     subscriber.on("message", (channel, message) => {
         
-        sendMessage("Pizza Shop 2 handle: " + message.replace("I want a ", ""))
+        sendMessage("app2 handle: " + message.replace("I want a ", ""))
         
     })
 }
