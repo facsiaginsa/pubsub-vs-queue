@@ -4,7 +4,7 @@
 
 This software is for you who want to know the difference between Pub/Sub and Queue using Redis. This is the topology of the software:
 
-![Software Topology](https://github.com/facsiaginsa/pubsub-vs-queue/blob/main/topology.png?raw=true)
+![Software Topology](https://github.com/facsiaginsa/pubsub-vs-queue/blob/master/topology.png?raw=true)
 
 The ``app1`` will send a message to ``redis`` every seconds. The message is something like ``I want a pizza {counter}``. And then the ``app2`` and ``app3`` will process the request by connecting to redis. And then the ``app2`` & ``app3`` will send a message like ``app2 handle: pizza {counter}`` or ``app3 handle: pizza {counter}`` to ``app1`` depend on wich app got the message from ``redis``.
 
