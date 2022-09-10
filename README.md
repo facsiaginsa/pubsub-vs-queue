@@ -19,6 +19,7 @@ This software has 2 operation mode:
 You need:
 1. node (tested in v16.15.0)
 2. npm (tested in v8.5.5)
+3. redis (tested in v7.0.4)
 
 ### Cloning Repo
 
